@@ -1,0 +1,379 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-image: linear-gradient(50deg,rgb(146, 220, 247),rgb(250, 222, 171),rgb(255, 255, 68) ); */
+    background-image: linear-gradient(50deg,#333434,#F7F6F7, #777777 );
+
+
+}
+
+h1 {
+    margin: 20px;
+    text-align: center;
+    color: #EA4335;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(50px, 200px));
+    justify-content: center;
+    gap: 5px;
+    justify-content: space-between;
+    justify-items: center;
+    /* height: 50vh; */
+    width: 55%;
+}
+
+.windows {
+    height: 100%;
+    width: 50%;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #00B7F2;
+    background-image: linear-gradient(50deg,#00B7F2,#0D5B8E);
+}
+
+.item {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.inData {
+    position: absolute;
+    bottom: 0;
+    left:0;
+    right: 0;
+    top: 0;
+    display: none;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+    cursor: pointer;
+    background-image: linear-gradient(50deg,#C91751,#372473);
+    text-transform: uppercase;
+    width: 50%;
+}
+
+.post-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    right: -161%;
+    /* left: 0;
+    bottom: 0;
+     */
+    display: none;
+    align-items: center;
+    align-content: center;
+    color: greenyellow;
+    text-align: center;
+    cursor: pointer;
+    height: 500%;
+    width: 170%;
+}
+
+
+.item:hover .inData {
+    display: flex;
+    font-size: 12px;
+    font-weight: bold;
+    align-items: flex-start;
+    text-align: center;
+}
+
+
+.item:hover .post-overlay {
+/*.post:hover= cuando hago hover en el elemento hover
+  .post-overlay= Le diré que aparezca el elemento .post-overlay
+  que inicialmente tiene un valor de display block*/
+    display: flex;
+    align-items: flex-start;
+    padding: 25% 20%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* #tituloV {
+    grid-column: 1 / span 2;
+} */
+
+#fv1 {
+    background-image: url(../images/v1.jpg);
+    background-size: 100% 100%;
+}
+
+ #fv2  {
+    background-image: url(../images/v2.jpg);
+    background-size: 100% 100%;
+}
+
+ #fv3  {
+    background-image: url(../images/v3.jpg);
+    background-size: 100% 100%;
+}
+
+ #fv4  {
+    background-image: url(../images/v4.jpg);
+    background-size: 100% 100%;
+}
+
+#fv5  {
+    background-image: url(../images/v5.jpg);
+    background-size: 100% 100%;
+}
+
+ #fv6  {
+    background-image: url(../images/v6.jpg);
+    background-size: 100% 100%;
+}
+
+ #fv7  {
+    background-image: url(../images/v7.jpg);
+    background-size: 100% 100%;
+}
+
+ #fv8  {
+    background-image: url(../images/v8.jpg);
+    background-size: 100% 100%;
+}
+
+ #fv9  {
+    background-image: url(../images/v9.jpg);
+    background-size: 100% 100%;
+}
+
+ #fv10  {
+    background-image: url(../images/v10.jpg);
+    background-size: 100% 100%;
+}
+
+ #fv11  {
+    background-image: url(../images/v11.jpg);
+    background-size: 100% 100%;
+}
+
+ #fv12  {
+    background-image: url(../images/v12.jpg);
+    background-size: 100% 100%;
+}
+
+ #fv13  {
+    background-image: url(../images/v13.jpg);
+    background-size: 100% 100%;
+}
+
+ #fv14  {
+    background-image: url(../images/v14.jpg);
+    background-size: 100% 100%;
+}
+
+ #fv15  {
+    background-image: url(../images/v15.jpg);
+    background-size: 100% 100%;
+}
+
+#fv16  {
+    background-image: url(../images/v16.jpg);
+    background-size: 100% 100%;
+    position: absolute;
+    top: -100%;
+    right: -161%;
+}
+
+ #fv17  {
+    background-image: url(../images/v17.jpg);
+    background-size: 100% 100%;
+    position: absolute;
+    top: -670%;
+    right: -161%;
+}
+
+ #fv18  {
+    background-image: url(../images/v18.jpg);
+    background-size: 100% 100%;
+    position: absolute;
+    top: -670%;
+    right: -161%;
+}
+
+ #fv19  {
+    background-image: url(../images/v19.jpg);
+    background-size: 100% 100%;
+    position: absolute;
+    top: -670%;
+    right: -161%;
+}
+
+ #fv20  {
+    background-image: url(../images/v20.jpg);
+    background-size: 100% 100%;
+    position: absolute;
+    top: -670%;
+    right: -161%;
+}
+
+#fv21  {
+    background-image: url(../images/v21.jpg);
+    background-size: 100% 100%;
+    position: absolute;
+    top: -670%;
+    right: -161%;
+}
+
+ #fv22  {
+    background-image: url(../images/v22.jpg);
+    background-size: 100% 100%;
+    position: absolute;
+    top: -670%;
+    right: -161%;
+}
+
+.imagenes {
+    position: relative;
+    /* opacity: 0.2; */
+}
+
+.data  {
+    justify-content: center;
+    text-align: center;
+    display: none;
+    position: absolute;
+    top: 20%;
+    right: 30%;
+    z-index: 2;
+}
+
+#ImgBig {
+margin-right: 20px;
+height: 300px;
+}
+
+
+/* #datos,#datos1  {
+    justify-content: center;
+    text-align: center;
+    display: none;
+} */
+
+.form {
+    display: grid;
+    grid-template-columns: 150px 80px;
+    gap: 0px 10px;
+    justify-content: center;
+    margin: 30px auto ;
+    /* margin-top: 30px; */
+    padding: 5px;
+    border: 2px solid rgb(124, 124, 236);
+    background-image: linear-gradient(-45deg,#5FC4C9, #36B8E9);
+    border-radius: 8px;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.titulosF {
+    border: 1px solid grey;
+    background-image: linear-gradient(90deg,#5FC4C9, #36B8E9);
+    text-align: center;
+    align-items: center;
+}
+
+
+.container-data {
+    display: flex;
+}
+
+.container-data2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.tablaAlumino thead th:last-child {
+    /* text-align: end; */
+    font-weight: bold;
+}
+
+table {
+    border: 1px solid grey;
+    text-align: center;
+    margin: 7px auto ;
+    background: rgb(198, 198, 243);
+}
+
+table tbody tr {
+    /*background-image: linear-gradient(90deg,#A4D2CF, #64A7AD , #79C9D2);   #79C9D2*/
+    background-image: linear-gradient(-110deg,#4285F4 , #79C9D2);
+    color:  white;
+    font-size: 15px;
+}
+
+table th {
+    width: 100px;
+    padding: 5px;
+    font-weight: lighter;
+}
+
+table thead {
+    color: white;
+    font-weight: bolder;
+    background: #34A853; /*color anterior  #4F848A*/
+    font-size: 16px;
+}
+
+.titAcc {
+    background: orangered;
+}
+
+.form input {
+    text-align: end;
+}
+
+/* para pruebas de ocultar elemento */
+#oculta {
+    width: 50%;
+    background: cornflowerblue;
+    display: none;
+}
+
+.boton_total #totaliza {
+    background-image: linear-gradient(50deg,#C91751,#372473);
+    cursor: pointer;
+    width: inherit;
+    height: 4em;
+    font-size: 1em;
+    text-transform: uppercase;
+    text-decoration: wavy;
+    color: rgb(240, 245, 245);
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.boton_total #botonExport {
+    background-image: linear-gradient(50deg,#372473,#C91751);
+    cursor: pointer;
+    width: inherit;
+    height: 4em;
+    font-size: 1em;
+    text-transform: uppercase;
+    text-decoration: wavy;
+    color: rgb(240, 245, 245);
+    font-weight: bold;
+    border-radius: 20px;   
+}
+
+.boton_total {
+    width: 35%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+#totCompon thead tr:first-child {
+    text-transform: uppercase;
+    background: #4285F4;
+}
+

@@ -1,0 +1,48 @@
+//*-------------------*/
+var vinilV1 = [];
+var tortacV1 = [];
+var torMV1 = [];
+var torHV1 = [];
+var torIV1 = [];
+var torLV1 = [];
+var linkV1 = [];
+var manijaV1 = [];
+var silicV1 = [];
+var cintaV1 = [];
+var cleanV1 = [];
+
+
+----------------
+
+	var sumaVinil = 0;          //Almacena el valor almacenado en la fórmula para Vinil
+        var sumaTor1 = 0;           //Almacena el valor almacenado en la fórmula para Tornillo CC
+        var sumaTaco = 0;           //Almacena el valor almacenado en la fórmula para Tacos
+        var sumaTorM = 0;           //Almacena el valor almacenado en la fórmula para Tornillos Marco
+        var sumaTorH = 0;           //Almacena el valor almacenado en la fórmula para Tornillos Hoja
+        var sumaTorI = 0;           //Almacena el valor almacenado en la fórmula para Tornillos Intermedios
+        var sumaTorL = 0;           //Almacena el valor almacenado en la fórmula para Tornillos Link
+        var sumaLink = 0;           //Almacena el valor almacenado en la fórmula para link
+        var sumaManija = 0;         //Almacena el valor almacenado en la fórmula para Manijas
+        var sumaSilic = 0;          //Almacena el valor almacenado en la fórmula para Silicon
+        var sumaCinta = 0;          //Almacena el valor almacenado en la fórmula para Cintas
+        var sumaClean = 0;          //Almacena el valor almacenado en la fórmula para Material Limpieza
+
+
+///////ALMACENA LA SUMATORIA DE LOS ELEMENTOS DEL ARRAY PARA ACCESORIOS
+
+        var suma_ArrayVI = 0;       //Suma para Array de Vinil       
+        var suma_ArrayT1 = 0;       //Suma para Array Tornillo CC
+        var suma_ArrayTM = 0;       //Suma para Array Tacos
+        var suma_ArrayTC = 0;       //Suma para Array Tornillos Marco
+        var suma_ArrayTI = 0;       //Suma para Array Tornillos Hoja
+        var suma_ArrayTH = 0;       //Suma para Array Tornillos Intermedios
+        var suma_ArrayTL = 0;       //Suma para Array Tornillos Link
+        var suma_ArrayLK = 0;       //Suma para Array link
+        var suma_ArrayMJ = 0;       //Suma para Array Manijas
+        var suma_ArraySL = 0;       //Suma para Array Silicon
+        var suma_ArraCA = 0;        //Suma para Array Cintas
+        var suma_ArrayMA = 0;       //Suma para Array Material Limpieza
+
+
+
+SON DE 20 ó 24 IF 0.2<b<0.5 USA 20 OR 0.2<b<0.6 USA 24

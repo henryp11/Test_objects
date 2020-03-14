@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/master.css">
+    <title>Software Itval</title>
+</head>
+<body>
+    <h1>Cotizador de Ventanas (Receta Aluminio)</h1>
+    <!-- al hacer asi: .item{contenido #$}*12 o numero se crean div con la clase indicada * un número dado -->
+    <div class="data" id="datos">
+        <!-- Formulario final solo medidas esenciales -->
+        <img src="" alt="" id="ImgBig">
+        <div class="form">
+            <span class="titulosF">Ventana Seleccionada</span><input type="text" id="ventana" value="0" readonly>
+            <span class="titulosF">Cantidad</span><input type="number" id="cantidad" value="1" placeholder="Cant.">
+            <span class="titulosF">Ancho (a)</span><input type="number" id="anchoA" value="0" placeholder="Ancho A">
+            <span class="titulosF">Ancho (b)</span><input type="number" id="anchoB" value="0" placeholder="Ancho B">
+            <span class="titulosF">Altura (h)</span><input type="number" id="alturaH" value="0" placeholder="Alto H">
+            <span class="titulosF">Altura (i)</span><input type="number" id="alturaI" value="0" placeholder="Alto I">
+            <span class="titulosF">Altura (j)</span><input type="number" id="alturaJ" value="0" placeholder="Alto J">
+            <!-- <span class="titulosF">No. Proyectables</span><input type="number" id="numProy" value="0" placeholder="num.proy"> -->
+            <span class="titulosF">Espesor Vidrio</span><input type="number" id="espVidrio" value="0" placeholder="Espesor">
+            <button id="btn_guardar" onclick="guardar(); almacena(); almacena2(); hideFormSave();">Guardar</button>
+            <button id="btn_cancel" onclick="hideForm()">Cancelar</button>
+        </div>
+    </div>
+    <section class="imagenes" id="imagesID">
+        <div class="container">
+            <div class="item">
+                <input type="button" class="windows" value="V-01" id="v1">
+                <span class="inData" id="for1">Clic Ingresar Datos</span>
+                <span class="post-overlay" id="fv1"> </span>
+                <!--<p id="nameV1">nombre</p>  -->
+            </div>
+            <div class="item">
+                <input type="button" class="windows" value="V-02" id="v2">
+                <span class="inData" id="for2">Clic Ingresar Datos</span>
+                <span class="post-overlay" id="fv2"> </span>
+            </div>
+            <div class="item">
+                <input type="button" class="windows" value="V-03" id="v3">
+                <span class="inData" id="for3">Clic Ingresar Datos</span>
+                <span class="post-overlay" id="fv3"> </span>
+            </div>
+            <div class="item">
+                <input type="button" class="windows" value="V-04" id="v4">
+                <span class="inData" id="for4">Clic Ingresar Datos</span>
+                <span class="post-overlay" id="fv4"> </span>
+            </div>
+            <div class="item">
+                <input type="button" class="windows" value="V-05" id="v5">
+                <span class="inData" id="for5">Clic Ingresar Datos</span>
+                <span class="post-overlay" id="fv5"> </span>
+            </div>
+            <div class="item">
+                <input type="button" class="windows" value="V-06" id="v6">
+                <span class="inData" id="for6">Clic Ingresar Datos</span>
+                <span class="post-overlay" id="fv6"> </span>
+            </div>
+            <div class="item">
+                <input type="button" class="windows" value="V-07" id="v7">
+                <span class="inData" id="for7">Clic Ingresar Datos</span>
+                <span class="post-overlay" id="fv7"> </span>
+            </div>
+            <div class="item">
+                <input type="button" class="windows" value="V-08" id="v8">
+                <span class="inData" id="for8">Clic Ingresar Datos</span>
+                <span class="post-overlay" id="fv8"> </span>
+            </div>
+            <div class="item">
+                <input type="button" class="windows" value="V-09" id="v9">
+                <span class="inData" id="for9">Clic Ingresar Datos</span>
+                <span class="post-overlay" id="fv9"> </span>
+            </div>
+            <div class="item">
+                <input type="button" class="windows" value="V-10" id="v10">
+                <span class="inData" id="for10">Clic Ingresar Datos</span>
+                <span class="post-overlay" id="fv10"> </span>
+            </div>
+            <div class="item">
+                <input type="button" class="windows" value="V-11" id="v11">
+                <span class="inData" id="for11">Clic Ingresar Datos</span>
+                <span class="post-overlay" id="fv11"> </span>
+            </div>
+            <div class="item">
+                <input type="button" class="windows" value="V-12" id="v12">
+                <span class="inData" id="for12">Clic Ingresar Datos</span>
+                <span class="post-overlay" id="fv12"> </span>
+            </div>
+            <div class="item">
+                <input type="button" class="windows" value="V-13" id="v13">
+                <span class="inData" id="for13">Clic Ingresar Datos</span>
+                <span class="post-overlay" id="fv13"> </span>
+            </div>
+            <div class="item">
+                <input type="button" class="windows" value="V-14" id="v14">
+                <span class="inData" id="for14">Clic Ingresar Datos</span>
+                <span class="post-overlay" id="fv14"> </span>
+            </div>
+            <div class="item">
+                <input type="button" class="windows" value="V-15" id="v15">
+                <span class="inData" id="for15">Clic Ingresar Datos</span>
+                <span class="post-overlay" id="fv15"> </span>
+            </div>
+            <div class="item">
+                <input type="button" class="windows" value="V-16" id="v16">
+                <span class="inData" id="for16">Clic Ingresar Datos</span>
+                <span class="post-overlay" id="fv16"> </span>
+            </div>
+            <div class="item">
+                <input type="button" class="windows" value="V-17" id="v17">
+                <span class="inData" id="for17">Clic Ingresar Datos</span>
+                <span class="post-overlay" id="fv17"> </span>
+            </div>
+            <div class="item">
+                <input type="button" class="windows" value="V-18" id="v18">
+                <span class="inData" id="for18">Clic Ingresar Datos</span>
+                <span class="post-overlay" id="fv18"> </span>
+            </div>
+            <div class="item">
+                <input type="button" class="windows" value="V-19" id="v19">
+                <span class="post-overlay" id="fv19"> </span>
+                <span class="inData" id="for19">Clic Ingresar Datos</span>
+            </div>
+            <div class="item">
+                <input type="button" class="windows" value="V-20" id="v20">
+                <span class="inData" id="for20">Clic Ingresar Datos</span>
+                <span class="post-overlay" id="fv20"> </span>
+            </div>
+            <div class="item">
+                <input type="button" class="windows" value="V-21" id="v21">
+                <span class="inData" id="for21">Clic Ingresar Datos</span>
+                <span class="post-overlay" id="fv21"> </span>
+            </div>
+            <div class="item">
+                <input type="button" class="windows" value="V-22" id="v22">
+                <span class="inData" id="for22">Clic Ingresar Datos</span>
+                <span class="post-overlay" id="fv22"> </span>
+            </div>
+            
+        </div>
+    </section>
+    <!-- action="formuV1"-->
+    <!-- onsubmit="return comprobar()" -->
+    <!-- <form name="formuV1" id="formuV1"  ></form> -->
+  
+    <section> 
+        <div class="container-data"> 
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Ventana</th>
+                        <th>Cantidad</th>
+                        <th>Ancho (a)</th>
+                        <th>Ancho (b)</th>
+                        <th>Altura (h)</th>
+                        <th>Altura (i)</th>
+                        <th>Altura (j)</th>
+                        <th>Espesor Vidrio</th>
+                        <th>Area</th>
+                    </tr>
+                </thead>
+                <tbody id="tablita">
+            
+                </tbody>
+            </table>
+        </div>
+        <div class="boton_total">
+            <button id="totaliza" onclick="totales(); totales2();">totalizar Componentes</button>
+        </div>
+        <div>
+            <table class="tabla" id="totCompon">
+                <thead>
+                    <tr>
+                        <th colspan="7">
+                            Estructura de aluminio
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>ITEM</th>
+                        <th>ELEMENTO</th>
+                        <th>REFERENCIA</th>
+                        <th>LONGITUD</th>
+                        <th>PERFILES</th>
+                        <th>PRECIO UNITARIO</th>
+                        <th>PRECIO TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.1</td>
+                        <td>MARCO PERIMETRAL PROYECTABLE</td>
+                        <td>1385</td>
+                        <td id="longMarco">0</td>
+                        <td id="noPerfM">0</td>
+                        <td id="precioUni">0</td>
+                        <td id="precioTot">0</td>
+                    </tr>
+                    <tr>
+                        <td>1.2</td>
+                        <td>MARCO DE HOJA</td>
+                        <td>1384</td>
+                        <td id="longHoja">0</td>
+                        <td id="noPerfH">0</td>
+                        <td id="precioUni">0</td>
+                        <td id="precioTot">0</td>
+                    </tr>
+                    <tr>
+                        <td>1.3</td>
+                        <td>INTERMEDIO</td>
+                        <td>1382</td>
+                        <td id="longInter">0</td>
+                        <td id="noPerfI">0</td>
+                        <td id="precioUni">0</td>
+                        <td id="precioTot">0</td>
+                    </tr>
+                    <tr>
+                        <td>1.4</td>
+                        <td>JUNQUILLO</td>
+                        <td>1383</td>
+                        <td id="longJunq">0</td>
+                        <td id="noPerfJ">0</td>
+                        <td id="precioUni">0</td>
+                        <td id="precioTot">0</td>
+                    </tr>
+                    <tr>
+                        <td>1.1</td>
+                        <td>ANCLA</td>
+                        <td>1444</td>
+                        <td id="longAncla">0</th>
+                        <td id="noPerfA">0</td>
+                        <td id="precioUni">0</td>
+                        <td id="precioTot">0</td>
+                    </tr>
+                    <tr>
+                        <th colspan="7"></th>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th colspan="7">
+                            Accesorios Estructura
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>ITEM</th>
+                        <th colspan="2">DESCRIPCION</th>
+                        <th>UNIDAD</th>
+                        <th>CANTIDAD</th>
+                        <th>PRECIO UNITARIO</th>
+                        <th>PRECIO TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2.1</td>
+                        <td colspan="2">Vinil P-92 (479-5mm perfilplast)</td>
+                        <td>m</td>
+                        <td id="cantVinil">0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2.2</td>
+                        <td colspan="2">Tornillo CC 8-18 x 1 1/2 Galv</td>
+                        <td>lb</td>
+                        <td id="cantTorcc">0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2.3</td>
+                        <td colspan="2">Tacos plasticos f-5</td>
+                        <td>Unid.</td>
+                        <td id="cantTaco">0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2.4</td>
+                        <td colspan="2">Tornillo CP 3/16 x 1/2 negros (marcos)</td>
+                        <td>Unid.</td>
+                        <td id="cantTorm">0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2.5</td>
+                        <td colspan="2">Tornillo CP 3/16 x 3/8 negros (Hojas)</td>
+                        <td>Unid.</td>
+                        <td id="cantTorh">0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2.6</td>
+                        <td colspan="2">Tornillo CC 8-18 x 3/4 galv (Intermedio)</td>
+                        <td>Unid.</td>
+                        <td id="cantTori">0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2.7</td>
+                        <td colspan="2">Tornillo CP 8x 1/2 inox (Link de 12")</td>
+                        <td>Unid.</td>
+                        <td id="cantTorl1">0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2.8</td>
+                        <td colspan="2">Tornillo CP 8x 1/2 inox (Link de 16")</td>
+                        <td>Unid.</td>
+                        <td id="cantTorl2">0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2.9</td>
+                        <td colspan="2">Link 12" inox. haideli (ferceva)</td>
+                        <td>Unid.</td>
+                        <td id="cantLink12">0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2.10</td>
+                        <td colspan="2">Link 16" inox. haideli (ferceva)</td>
+                        <td>Unid.</td>
+                        <td id="cantLink16">0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2.11</td>
+                        <td colspan="2">Manubrio olimpia proyectable</td>
+                        <td>Unid.</td>
+                        <td id="cantMani">0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2.12</td>
+                        <td colspan="2">Silicon Transparente Itval</td>
+                        <td>Tubo</td>
+                        <td id="cantSil">0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2.13</td>
+                        <td colspan="2">Cinta masking 3/4 x 40 Yardas</td>
+                        <td>Tubo</td>
+                        <td id="cantCinta">0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2.14</td>
+                        <td colspan="2">Materiales de Limpieza</td>
+                        <td>Unid.</td>
+                        <td id="cantClean">0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="boton_total">
+                <button id="botonExport"  onclick="exportTableToExcel('totCompon', 'Total_cotizac')">Exportar a Excel</button>
+            </div>
+        </div>
+    </section>
+    <!-- Tablas que almacenan los totales calculados de cada componente por cada tipo de ventana -->
+    <section class="recetaAluminio">
+            <div class="container-data2">
+                <table class="tablaAlumino tablaV1">
+                    <thead>
+                        <tr>
+                            <th>Tipo Ventana</th>
+                            <th>Comp</th>
+                            <th>Nombre receta</th>
+                            <th>Cantidad (m)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablitaV1">
+                        <tr>
+                            <th>V-01</th>
+                            <th>1385</th>
+                            <th>MARCO PROYECTABLE</th>
+                            <th id="marcop">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-01</th>
+                            <th>1383</th>
+                            <th>JUNQUILLO</th>
+                            <th id="junqp">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-01</th>
+                            <th>1444</th>
+                            <th>ANCLA</th>
+                            <th id="anclap">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="tablaV1">
+                    <thead>
+                        <tr class="titAcc">
+                            <th colspan="14">ACCESORIOS PARA VENTANA V-01</th>
+                        </tr>
+                        <tr>
+                            <th>Vinil P-92 (479-5mm perfilplast)</th>
+                            <th>Tornillo CC 8-18 x 1 1/2 galv</th>
+                            <th>Tacos plasticos f-5 (u)</th>
+                            <th>Tornillo CP 3/16 x 1/2 negros ()</th>
+                            <th>Manubrio olimpia proyectable</th>
+                            <th>Silicon transparente Itval</th>
+                            <th>Cinta masking 3/4 x 40 yardas (Abro)</th>
+                            <th>Materiales limpieza</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th id="vinil1">0</th>
+                            <th id="torcc1">0</th>
+                            <th id="taco1">0</th>
+                            <th id="torm1">0</th>
+                            <th id="mani1">0</th>
+                            <th id="sil1">0</th>
+                            <th id="cinta1">0</th>
+                            <th id="clean1">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- -->
+
+                <table class="tablaAlumino tablaV2">
+                    <thead>
+                        <tr>
+                            <th>Tipo Ventana</th>
+                            <th>Comp</th>
+                            <th>Nombre receta</th>
+                            <th>Cantidad (m)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablitaV2">
+                        <tr>
+                            <th>V-02</th>
+                            <th>1385</th>
+                            <th>MARCO PROYECTABLE</th>
+                            <th id="marcop2">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-02</th>
+                            <th>1384</th>
+                            <th>MARCO DE HOJA</th>
+                            <th id="hojap2">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-02</th>
+                            <th>1383</th>
+                            <th>JUNQUILLO</th>
+                            <th id="junqp2">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-02</th>
+                            <th>1444</th>
+                            <th>ANCLA</th>
+                            <th id="anclap2">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="tablaV2">
+                    <thead>
+                        <tr class="titAcc">
+                            <th colspan="14">ACCESORIOS PARA VENTANA V-02</th>
+                        </tr>
+                        <tr>
+                            <th>Vinil P-92 (479-5mm perfilplast)</th>
+                            <th>Tornillo CC 8-18 x 1 1/2 galv</th>
+                            <th>Tacos plasticos f-5 (u)</th>
+                            <th>Tornillo CP 3/16 x 1/2 negros ()</th>
+                            <th>Tornillo CP 3/16 x 3/8 negros ()</th>
+                            <th>Manubrio olimpia proyectable</th>
+                            <th>Silicon transparente Itval</th>
+                            <th>Cinta masking 3/4 x 40 yardas (Abro)</th>
+                            <th>Materiales limpieza</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th id="vinil2">0</th>
+                            <th id="torcc2">0</th>
+                            <th id="taco2">0</th>
+                            <th id="torm2">0</th>
+                            <th id="torh2">0</th>
+                            <th id="mani2">0</th>
+                            <th id="sil2">0</th>
+                            <th id="cinta2">0</th>
+                            <th id="clean2">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- -->
+
+                <table class="tablaAlumino tablaV3">
+                    <thead>
+                        <tr>
+                            <th>Tipo Ventana</th>
+                            <th>Comp</th>
+                            <th>Nombre receta</th>
+                            <th>Cantidad (m)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablitaV3">
+                        <tr>
+                            <th>V-03</th>
+                            <th>1385</th>
+                            <th>MARCO PROYECTABLE</th>
+                            <th id="marcop3">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-03</th>
+                            <th>1384</th>
+                            <th>MARCO DE HOJA</th>
+                            <th id="hojap3">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-03</th>
+                            <th>1382</th>
+                            <th>INTERMEDIO</th>
+                            <th id="interp3">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-03</th>
+                            <th>1383</th>
+                            <th>JUNQUILLO</th>
+                            <th id="junqp3">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-03</th>
+                            <th>1444</th>
+                            <th>ANCLA</th>
+                            <th id="anclap3">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="tablaV3">
+                    <thead>
+                        <tr class="titAcc">
+                            <th colspan="14">ACCESORIOS PARA VENTANA V-03</th>
+                        </tr>
+                        <tr>
+                            <th>Vinil P-92 (479-5mm perfilplast)</th>
+                            <th>Tornillo CC 8-18 x 1 1/2 galv</th>
+                            <th>Tacos plasticos f-5 (u)</th>
+                            <th>Tornillo CP 3/16 x 1/2 negros ()</th>
+                            <th>Tornillo CP 3/16 x 3/8 negros ()</th>
+                            <th>Tornillo CC 8-18 x 3/4 galv ()</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 12")</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 16")</th>
+                            <th>Link 12" inox. haideli (ferceva)</th>
+                            <th>Link 16" inox. haideli (ferceva)</th>
+                            <th>Manubrio olimpia proyectable</th>
+                            <th>Silicon transparente Itval</th>
+                            <th>Cinta masking 3/4 x 40 yardas (Abro)</th>
+                            <th>Materiales limpieza</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th id="vinil3">0</th>
+                            <th id="torcc3">0</th>
+                            <th id="taco3">0</th>
+                            <th id="torm3">0</th>
+                            <th id="torh3">0</th>
+                            <th id="tori3">0</th>
+                            <th id="torl1_3">0</th>
+                            <th id="torl2_3">0</th>
+                            <th id="link12_3">0</th>
+                            <th id="link16_3">0</th>
+                            <th id="mani3">0</th>
+                            <th id="sil3">0</th>
+                            <th id="cinta3">0</th>
+                            <th id="clean3">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- -->
+
+                <table class="tablaAlumino tablaV4">
+                    <thead>
+                        <tr>
+                            <th>Tipo Ventana</th>
+                            <th>Comp</th>
+                            <th>Nombre receta</th>
+                            <th>Cantidad (m)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablitaV4">
+                        <tr>
+                            <th>V-04</th>
+                            <th>1385</th>
+                            <th>MARCO PROYECTABLE</th>
+                            <th id="marcop4">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-04</th>
+                            <th>1384</th>
+                            <th>MARCO DE HOJA</th>
+                            <th id="hojap4">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-04</th>
+                            <th>1382</th>
+                            <th>INTERMEDIO</th>
+                            <th id="interp4">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-04</th>
+                            <th>1383</th>
+                            <th>JUNQUILLO</th>
+                            <th id="junqp4">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-04</th>
+                            <th>1444</th>
+                            <th>ANCLA</th>
+                            <th id="anclap4">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="tablaV4">
+                    <thead>
+                        <tr class="titAcc">
+                            <th colspan="14">ACCESORIOS PARA VENTANA V-04</th>
+                        </tr>
+                        <tr>
+                            <th>Vinil P-92 (479-5mm perfilplast)</th>
+                            <th>Tornillo CC 8-18 x 1 1/2 galv</th>
+                            <th>Tacos plasticos f-5 (u)</th>
+                            <th>Tornillo CP 3/16 x 1/2 negros ()</th>
+                            <th>Tornillo CP 3/16 x 3/8 negros ()</th>
+                            <th>Tornillo CC 8-18 x 3/4 galv ()</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 12")</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 16")</th>
+                            <th>Link 12" inox. haideli (ferceva)</th>
+                            <th>Link 16" inox. haideli (ferceva)</th>
+                            <th>Manubrio olimpia proyectable</th>
+                            <th>Silicon transparente Itval</th>
+                            <th>Cinta masking 3/4 x 40 yardas (Abro)</th>
+                            <th>Materiales limpieza</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th id="vinil4">0</th>
+                            <th id="torcc4">0</th>
+                            <th id="taco4">0</th>
+                            <th id="torm4">0</th>
+                            <th id="torh4">0</th>
+                            <th id="tori4">0</th>
+                            <th id="torl1_4">0</th>
+                            <th id="torl2_4">0</th>
+                            <th id="link12_4">0</th>
+                            <th id="link16_4">0</th>
+                            <th id="mani4">0</th>
+                            <th id="sil4">0</th>
+                            <th id="cinta4">0</th>
+                            <th id="clean4">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- -->
+
+                <table class="tablaAlumino tablaV5_V6">
+                    <thead>
+                        <tr>
+                            <th>Tipo Ventana</th>
+                            <th>Comp</th>
+                            <th>Nombre receta</th>
+                            <th>Cantidad (m)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablitaV5_6">
+                        <tr>
+                            <th>V-05 & V-06</th>
+                            <th>1385</th>
+                            <th>MARCO PROYECTABLE</th>
+                            <th id="marcop5_6">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-05 & V-06</th>
+                            <th>1384</th>
+                            <th>MARCO DE HOJA</th>
+                            <th id="hojap5_6">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-05 & V-06</th>
+                            <th>1382</th>
+                            <th>INTERMEDIO</th>
+                            <th id="interp5_6">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-05 & V-06</th>
+                            <th>1383</th>
+                            <th>JUNQUILLO</th>
+                            <th id="junqp5_6">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-05 & V-06</th>
+                            <th>1444</th>
+                            <th>ANCLA</th>
+                            <th id="anclap5_6">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="tablaV5_6">
+                    <thead>
+                        <tr class="titAcc">
+                            <th colspan="14">ACCESORIOS PARA VENTANAS V-05 Y V-06</th>
+                        </tr>
+                        <tr>
+                            <th>Vinil P-92 (479-5mm perfilplast)</th>
+                            <th>Tornillo CC 8-18 x 1 1/2 galv</th>
+                            <th>Tacos plasticos f-5 (u)</th>
+                            <th>Tornillo CP 3/16 x 1/2 negros ()</th>
+                            <th>Tornillo CP 3/16 x 3/8 negros ()</th>
+                            <th>Tornillo CC 8-18 x 3/4 galv ()</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 12")</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 16")</th>
+                            <th>Link 12" inox. haideli (ferceva)</th>
+                            <th>Link 16" inox. haideli (ferceva)</th>
+                            <th>Manubrio olimpia proyectable</th>
+                            <th>Silicon transparente Itval</th>
+                            <th>Cinta masking 3/4 x 40 yardas (Abro)</th>
+                            <th>Materiales limpieza</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th id="vinil5_6">0</th>
+                            <th id="torcc5_6">0</th>
+                            <th id="taco5_6">0</th>
+                            <th id="torm5_6">0</th>
+                            <th id="torh5_6">0</th>
+                            <th id="tori5_6">0</th>
+                            <th id="torl1_5_6">0</th>
+                            <th id="torl2_5_6">0</th>
+                            <th id="link12_5_6">0</th>
+                            <th id="link16_5_6">0</th>
+                            <th id="mani5_6">0</th>
+                            <th id="sil5_6">0</th>
+                            <th id="cinta5_6">0</th>
+                            <th id="clean5_6">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- -->
+
+                <table class="tablaAlumino tablaV7">
+                    <thead>
+                        <tr>
+                            <th>Tipo Ventana</th>
+                            <th>Comp</th>
+                            <th>Nombre receta</th>
+                            <th>Cantidad (m)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablitaV7">
+                        <tr>
+                            <th>V-07</th>
+                            <th>1385</th>
+                            <th>MARCO PROYECTABLE</th>
+                            <th id="marcop7">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-07</th>
+                            <th>1384</th>
+                            <th>MARCO DE HOJA</th>
+                            <th id="hojap7">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-07</th>
+                            <th>1382</th>
+                            <th>INTERMEDIO</th>
+                            <th id="interp7">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-07</th>
+                            <th>1383</th>
+                            <th>JUNQUILLO</th>
+                            <th id="junqp7">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-07</th>
+                            <th>1444</th>
+                            <th>ANCLA</th>
+                            <th id="anclap7">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="tablaV7">
+                    <thead>
+                        <tr class="titAcc">
+                            <th colspan="14">ACCESORIOS PARA VENTANA V-07</th>
+                        </tr>
+                        <tr>
+                            <th>Vinil P-92 (479-5mm perfilplast)</th>
+                            <th>Tornillo CC 8-18 x 1 1/2 galv</th>
+                            <th>Tacos plasticos f-5 (u)</th>
+                            <th>Tornillo CP 3/16 x 1/2 negros ()</th>
+                            <th>Tornillo CP 3/16 x 3/8 negros ()</th>
+                            <th>Tornillo CC 8-18 x 3/4 galv ()</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 12")</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 16")</th>
+                            <th>Link 12" inox. haideli (ferceva)</th>
+                            <th>Link 16" inox. haideli (ferceva)</th>
+                            <th>Manubrio olimpia proyectable</th>
+                            <th>Silicon transparente Itval</th>
+                            <th>Cinta masking 3/4 x 40 yardas (Abro)</th>
+                            <th>Materiales limpieza</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th id="vinil7">0</th>
+                            <th id="torcc7">0</th>
+                            <th id="taco7">0</th>
+                            <th id="torm7">0</th>
+                            <th id="torh7">0</th>
+                            <th id="tori7">0</th>
+                            <th id="torl1_7">0</th>
+                            <th id="torl2_7">0</th>
+                            <th id="link12_7">0</th>
+                            <th id="link16_7">0</th>
+                            <th id="mani7">0</th>
+                            <th id="sil7">0</th>
+                            <th id="cinta7">0</th>
+                            <th id="clean7">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- -->
+
+                
+
+                <table class="tablaAlumino tablaV8_9">
+                    <thead>
+                        <tr>
+                            <th>Tipo Ventana</th>
+                            <th>Comp</th>
+                            <th>Nombre receta</th>
+                            <th>Cantidad (m)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablitaV8_9">
+                        <tr>
+                            <th>V-08 & V-09</th>
+                            <th>1385</th>
+                            <th>MARCO PROYECTABLE</th>
+                            <th id="marcop8_9">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-08 & V-09</th>
+                            <th>1384</th>
+                            <th>MARCO DE HOJA</th>
+                            <th id="hojap8_9">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-08 & V-09</th>
+                            <th>1382</th>
+                            <th>INTERMEDIO</th>
+                            <th id="interp8_9">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-08 & V-09</th>
+                            <th>1383</th>
+                            <th>JUNQUILLO</th>
+                            <th id="junqp8_9">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-08 & V-09</th>
+                            <th>1444</th>
+                            <th>ANCLA</th>
+                            <th id="anclap8_9">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <table class="tablaV8_9">
+                    <thead>
+                        <tr class="titAcc">
+                            <th colspan="14">ACCESORIOS PARA VENTANAS V-08 Y V-09</th>
+                        </tr>
+                        <tr>
+                            <th>Vinil P-92 (479-5mm perfilplast)</th>
+                            <th>Tornillo CC 8-18 x 1 1/2 galv</th>
+                            <th>Tacos plasticos f-5 (u)</th>
+                            <th>Tornillo CP 3/16 x 1/2 negros ()</th>
+                            <th>Tornillo CP 3/16 x 3/8 negros ()</th>
+                            <th>Tornillo CC 8-18 x 3/4 galv ()</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 12")</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 16")</th>
+                            <th>Link 12" inox. haideli (ferceva)</th>
+                            <th>Link 16" inox. haideli (ferceva)</th>
+                            <th>Manubrio olimpia proyectable</th>
+                            <th>Silicon transparente Itval</th>
+                            <th>Cinta masking 3/4 x 40 yardas (Abro)</th>
+                            <th>Materiales limpieza</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th id="vinil8_9">0</th>
+                            <th id="torcc8_9">0</th>
+                            <th id="taco8_9">0</th>
+                            <th id="torm8_9">0</th>
+                            <th id="torh8_9">0</th>
+                            <th id="tori8_9">0</th>
+                            <th id="torl1_8_9">0</th>
+                            <th id="torl2_8_9">0</th>
+                            <th id="link12_8_9">0</th>
+                            <th id="link16_8_9">0</th>
+                            <th id="mani8_9">0</th>
+                            <th id="sil8_9">0</th>
+                            <th id="cinta8_9">0</th>
+                            <th id="clean8_9">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- -->
+
+                <table class="tablaAlumino tablaV10">
+                    <thead>
+                        <tr>
+                            <th>Tipo Ventana</th>
+                            <th>Comp</th>
+                            <th>Nombre receta</th>
+                            <th>Cantidad (m)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablitaV10">
+                        <tr>
+                            <th>V-10</th>
+                            <th>1385</th>
+                            <th>MARCO PROYECTABLE</th>
+                            <th id="marcop10">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-10</th>
+                            <th>1384</th>
+                            <th>MARCO DE HOJA</th>
+                            <th id="hojap10">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-10</th>
+                            <th>1382</th>
+                            <th>INTERMEDIO</th>
+                            <th id="interp10">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-10</th>
+                            <th>1383</th>
+                            <th>JUNQUILLO</th>
+                            <th id="junqp10">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-10</th>
+                            <th>1444</th>
+                            <th>ANCLA</th>
+                            <th id="anclap10">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="tablaV10">
+                    <thead>
+                        <tr class="titAcc">
+                            <th colspan="14">ACCESORIOS PARA VENTANA V-10</th>
+                        </tr>
+                        <tr>
+                            <th>Vinil P-92 (479-5mm perfilplast)</th>
+                            <th>Tornillo CC 8-18 x 1 1/2 galv</th>
+                            <th>Tacos plasticos f-5 (u)</th>
+                            <th>Tornillo CP 3/16 x 1/2 negros ()</th>
+                            <th>Tornillo CP 3/16 x 3/8 negros ()</th>
+                            <th>Tornillo CC 8-18 x 3/4 galv ()</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 12")</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 16")</th>
+                            <th>Link 12" inox. haideli (ferceva)</th>
+                            <th>Link 16" inox. haideli (ferceva)</th>
+                            <th>Manubrio olimpia proyectable</th>
+                            <th>Silicon transparente Itval</th>
+                            <th>Cinta masking 3/4 x 40 yardas (Abro)</th>
+                            <th>Materiales limpieza</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th id="vinil10">0</th>
+                            <th id="torcc10">0</th>
+                            <th id="taco10">0</th>
+                            <th id="torm10">0</th>
+                            <th id="torh10">0</th>
+                            <th id="tori10">0</th>
+                            <th id="torl1_10">0</th>
+                            <th id="torl2_10">0</th>
+                            <th id="link12_10">0</th>
+                            <th id="link16_10">0</th>
+                            <th id="mani10">0</th>
+                            <th id="sil10">0</th>
+                            <th id="cinta10">0</th>
+                            <th id="clean10">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- -->
+
+                <table class="tablaAlumino tablaV11_12">
+                    <thead>
+                        <tr>
+                            <th>Tipo Ventana</th>
+                            <th>Comp</th>
+                            <th>Nombre receta</th>
+                            <th>Cantidad (m)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablitaV11_12">
+                        <tr>
+                            <th>V-11 & V-12</th>
+                            <th>1385</th>
+                            <th>MARCO PROYECTABLE</th>
+                            <th id="marcop11_12">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-11 & V-12</th>
+                            <th>1384</th>
+                            <th>MARCO DE HOJA</th>
+                            <th id="hojap11_12">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-11 & V-12</th>
+                            <th>1382</th>
+                            <th>INTERMEDIO</th>
+                            <th id="interp11_12">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-11 & V-12</th>
+                            <th>1383</th>
+                            <th>JUNQUILLO</th>
+                            <th id="junqp11_12">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-11 & V-12</th>
+                            <th>1444</th>
+                            <th>ANCLA</th>
+                            <th id="anclap11_12">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="tablaV11_12">
+                    <thead>
+                        <tr class="titAcc">
+                            <th colspan="14">ACCESORIOS PARA VENTANAS V-11 Y V-12</th>
+                        </tr>
+                        <tr>
+                            <th>Vinil P-92 (479-5mm perfilplast)</th>
+                            <th>Tornillo CC 8-18 x 1 1/2 galv</th>
+                            <th>Tacos plasticos f-5 (u)</th>
+                            <th>Tornillo CP 3/16 x 1/2 negros ()</th>
+                            <th>Tornillo CP 3/16 x 3/8 negros ()</th>
+                            <th>Tornillo CC 8-18 x 3/4 galv ()</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 12")</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 16")</th>
+                            <th>Link 12" inox. haideli (ferceva)</th>
+                            <th>Link 16" inox. haideli (ferceva)</th>
+                            <th>Manubrio olimpia proyectable</th>
+                            <th>Silicon transparente Itval</th>
+                            <th>Cinta masking 3/4 x 40 yardas (Abro)</th>
+                            <th>Materiales limpieza</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th id="vinil11_12">0</th>
+                            <th id="torcc11_12">0</th>
+                            <th id="taco11_12">0</th>
+                            <th id="torm11_12">0</th>
+                            <th id="torh11_12">0</th>
+                            <th id="tori11_12">0</th>
+                            <th id="torl1_11_12">0</th>
+                            <th id="torl2_11_12">0</th>
+                            <th id="link12_11_12">0</th>
+                            <th id="link16_11_12">0</th>
+                            <th id="mani11_12">0</th>
+                            <th id="sil11_12">0</th>
+                            <th id="cinta11_12">0</th>
+                            <th id="clean11_12">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- -->
+
+                <table class="tablaAlumino tablaV13_14">
+                    <thead>
+                        <tr>
+                            <th>Tipo Ventana</th>
+                            <th>Comp</th>
+                            <th>Nombre receta</th>
+                            <th>Cantidad (m)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablitaV13_14">
+                        <tr>
+                            <th>V-13 & V-14</th>
+                            <th>1385</th>
+                            <th>MARCO PROYECTABLE</th>
+                            <th id="marcop13_14">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-13 & V-14</th>
+                            <th>1384</th>
+                            <th>MARCO DE HOJA</th>
+                            <th id="hojap13_14">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-13 & V-14</th>
+                            <th>1382</th>
+                            <th>INTERMEDIO</th>
+                            <th id="interp13_14">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-13 & V-14</th>
+                            <th>1383</th>
+                            <th>JUNQUILLO</th>
+                            <th id="junqp13_14">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-13 & V-14</th>
+                            <th>1444</th>
+                            <th>ANCLA</th>
+                            <th id="anclap13_14">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="tablaV13_14">
+                    <thead>
+                        <tr class="titAcc">
+                            <th colspan="14">ACCESORIOS PARA VENTANAS V-13 Y V-14</th>
+                        </tr>
+                        <tr>
+                            <th>Vinil P-92 (479-5mm perfilplast)</th>
+                            <th>Tornillo CC 8-18 x 1 1/2 galv</th>
+                            <th>Tacos plasticos f-5 (u)</th>
+                            <th>Tornillo CP 3/16 x 1/2 negros ()</th>
+                            <th>Tornillo CP 3/16 x 3/8 negros ()</th>
+                            <th>Tornillo CC 8-18 x 3/4 galv ()</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 12")</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 16")</th>
+                            <th>Link 12" inox. haideli (ferceva)</th>
+                            <th>Link 16" inox. haideli (ferceva)</th>
+                            <th>Manubrio olimpia proyectable</th>
+                            <th>Silicon transparente Itval</th>
+                            <th>Cinta masking 3/4 x 40 yardas (Abro)</th>
+                            <th>Materiales limpieza</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th id="vinil13_14">0</th>
+                            <th id="torcc13_14">0</th>
+                            <th id="taco13_14">0</th>
+                            <th id="torm13_14">0</th>
+                            <th id="torh13_14">0</th>
+                            <th id="tori13_14">0</th>
+                            <th id="torl1_13_14">0</th>
+                            <th id="torl2_13_14">0</th>
+                            <th id="link12_13_14">0</th>
+                            <th id="link16_13_14">0</th>
+                            <th id="mani13_14">0</th>
+                            <th id="sil13_14">0</th>
+                            <th id="cinta13_14">0</th>
+                            <th id="clean13_14">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- -->
+
+               <table class="tablaAlumino tablaV15">
+                    <thead>
+                        <tr>
+                            <th>Tipo Ventana</th>
+                            <th>Comp</th>
+                            <th>Nombre receta</th>
+                            <th>Cantidad (m)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablitaV15">
+                        <tr>
+                            <th>V-15</th>
+                            <th>1385</th>
+                            <th>MARCO PROYECTABLE</th>
+                            <th id="marcop15">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-15</th>
+                            <th>1384</th>
+                            <th>MARCO DE HOJA</th>
+                            <th id="hojap15">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-15</th>
+                            <th>1382</th>
+                            <th>INTERMEDIO</th>
+                            <th id="interp15">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-15</th>
+                            <th>1383</th>
+                            <th>JUNQUILLO</th>
+                            <th id="junqp15">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-15</th>
+                            <th>1444</th>
+                            <th>ANCLA</th>
+                            <th id="anclap15">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="tablaV15">
+                    <thead>
+                        <tr class="titAcc">
+                            <th colspan="14">ACCESORIOS PARA VENTANA V-15</th>
+                        </tr>
+                        <tr>
+                            <th>Vinil P-92 (479-5mm perfilplast)</th>
+                            <th>Tornillo CC 8-18 x 1 1/2 galv</th>
+                            <th>Tacos plasticos f-5 (u)</th>
+                            <th>Tornillo CP 3/16 x 1/2 negros ()</th>
+                            <th>Tornillo CP 3/16 x 3/8 negros ()</th>
+                            <th>Tornillo CC 8-18 x 3/4 galv ()</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 12")</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 16")</th>
+                            <th>Link 12" inox. haideli (ferceva)</th>
+                            <th>Link 16" inox. haideli (ferceva)</th>
+                            <th>Manubrio olimpia proyectable</th>
+                            <th>Silicon transparente Itval</th>
+                            <th>Cinta masking 3/4 x 40 yardas (Abro)</th>
+                            <th>Materiales limpieza</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th id="vinil15">0</th>
+                            <th id="torcc15">0</th>
+                            <th id="taco15">0</th>
+                            <th id="torm15">0</th>
+                            <th id="torh15">0</th>
+                            <th id="tori15">0</th>
+                            <th id="torl1_15">0</th>
+                            <th id="torl2_15">0</th>
+                            <th id="link12_15">0</th>
+                            <th id="link16_15">0</th>
+                            <th id="mani15">0</th>
+                            <th id="sil15">0</th>
+                            <th id="cinta15">0</th>
+                            <th id="clean15">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- -->
+
+                <table class="tablaAlumino tablaV16">
+                    <thead>
+                        <tr>
+                            <th>Tipo Ventana</th>
+                            <th>Comp</th>
+                            <th>Nombre receta</th>
+                            <th>Cantidad (m)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablitaV16">
+                        <tr>
+                            <th>V-16</th>
+                            <th>1385</th>
+                            <th>MARCO PROYECTABLE</th>
+                            <th id="marcop16">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-16</th>
+                            <th>1384</th>
+                            <th>MARCO DE HOJA</th>
+                            <th id="hojap16">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-16</th>
+                            <th>1382</th>
+                            <th>INTERMEDIO</th>
+                            <th id="interp16">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-16</th>
+                            <th>1383</th>
+                            <th>JUNQUILLO</th>
+                            <th id="junqp16">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-16</th>
+                            <th>1444</th>
+                            <th>ANCLA</th>
+                            <th id="anclap16">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <table class="tablaV16">
+                    <thead>
+                        <tr class="titAcc">
+                            <th colspan="14">ACCESORIOS PARA VENTANA V-16</th>
+                        </tr>
+                        <tr>
+                            <th>Vinil P-92 (479-5mm perfilplast)</th>
+                            <th>Tornillo CC 8-18 x 1 1/2 galv</th>
+                            <th>Tacos plasticos f-5 (u)</th>
+                            <th>Tornillo CP 3/16 x 1/2 negros ()</th>
+                            <th>Tornillo CP 3/16 x 3/8 negros ()</th>
+                            <th>Tornillo CC 8-18 x 3/4 galv ()</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 12")</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 16")</th>
+                            <th>Link 12" inox. haideli (ferceva)</th>
+                            <th>Link 16" inox. haideli (ferceva)</th>
+                            <th>Manubrio olimpia proyectable</th>
+                            <th>Silicon transparente Itval</th>
+                            <th>Cinta masking 3/4 x 40 yardas (Abro)</th>
+                            <th>Materiales limpieza</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th id="vinil16">0</th>
+                            <th id="torcc16">0</th>
+                            <th id="taco16">0</th>
+                            <th id="torm16">0</th>
+                            <th id="torh16">0</th>
+                            <th id="tori16">0</th>
+                            <th id="torl1_16">0</th>
+                            <th id="torl2_16">0</th>
+                            <th id="link12_16">0</th>
+                            <th id="link16_16">0</th>
+                            <th id="mani16">0</th>
+                            <th id="sil16">0</th>
+                            <th id="cinta16">0</th>
+                            <th id="clean16">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- -->
+
+               <table class="tablaAlumino tablaV17">
+                    <thead>
+                        <tr>
+                            <th>Tipo Ventana</th>
+                            <th>Comp</th>
+                            <th>Nombre receta</th>
+                            <th>Cantidad (m)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablitaV17">
+                        <tr>
+                            <th>V-17</th>
+                            <th>1385</th>
+                            <th>MARCO PROYECTABLE</th>
+                            <th id="marcop17">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-17</th>
+                            <th>1384</th>
+                            <th>MARCO DE HOJA</th>
+                            <th id="hojap17">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-17</th>
+                            <th>1382</th>
+                            <th>INTERMEDIO</th>
+                            <th id="interp17">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-17</th>
+                            <th>1383</th>
+                            <th>JUNQUILLO</th>
+                            <th id="junqp17">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-17</th>
+                            <th>1444</th>
+                            <th>ANCLA</th>
+                            <th id="anclap17">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <table class="tablaV17">
+                    <thead>
+                        <tr class="titAcc">
+                            <th colspan="14">ACCESORIOS PARA VENTANA V-17</th>
+                        </tr>
+                        <tr>
+                            <th>Vinil P-92 (479-5mm perfilplast)</th>
+                            <th>Tornillo CC 8-18 x 1 1/2 galv</th>
+                            <th>Tacos plasticos f-5 (u)</th>
+                            <th>Tornillo CP 3/16 x 1/2 negros ()</th>
+                            <th>Tornillo CP 3/16 x 3/8 negros ()</th>
+                            <th>Tornillo CC 8-18 x 3/4 galv ()</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 12")</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 16")</th>
+                            <th>Link 12" inox. haideli (ferceva)</th>
+                            <th>Link 16" inox. haideli (ferceva)</th>
+                            <th>Manubrio olimpia proyectable</th>
+                            <th>Silicon transparente Itval</th>
+                            <th>Cinta masking 3/4 x 40 yardas (Abro)</th>
+                            <th>Materiales limpieza</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th id="vinil17">0</th>
+                            <th id="torcc17">0</th>
+                            <th id="taco17">0</th>
+                            <th id="torm17">0</th>
+                            <th id="torh17">0</th>
+                            <th id="tori17">0</th>
+                            <th id="torl1_17">0</th>
+                            <th id="torl2_17">0</th>
+                            <th id="link12_17">0</th>
+                            <th id="link16_17">0</th>
+                            <th id="mani17">0</th>
+                            <th id="sil17">0</th>
+                            <th id="cinta17">0</th>
+                            <th id="clean17">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- -->
+
+                <table class="tablaAlumino tablaV18">
+                    <thead>
+                        <tr>
+                            <th>Tipo Ventana</th>
+                            <th>Comp</th>
+                            <th>Nombre receta</th>
+                            <th>Cantidad (m)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablitaV18">
+                        <tr>
+                            <th>V-18</th>
+                            <th>1385</th>
+                            <th>MARCO PROYECTABLE</th>
+                            <th id="marcop18">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-18</th>
+                            <th>1384</th>
+                            <th>MARCO DE HOJA</th>
+                            <th id="hojap18">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-18</th>
+                            <th>1382</th>
+                            <th>INTERMEDIO</th>
+                            <th id="interp18">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-18</th>
+                            <th>1383</th>
+                            <th>JUNQUILLO</th>
+                            <th id="junqp18">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-18</th>
+                            <th>1444</th>
+                            <th>ANCLA</th>
+                            <th id="anclap18">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <table class="tablaV18">
+                    <thead>
+                        <tr class="titAcc">
+                            <th colspan="14">ACCESORIOS PARA VENTANA V-18</th>
+                        </tr>
+                        <tr>
+                            <th>Vinil P-92 (479-5mm perfilplast)</th>
+                            <th>Tornillo CC 8-18 x 1 1/2 galv</th>
+                            <th>Tacos plasticos f-5 (u)</th>
+                            <th>Tornillo CP 3/16 x 1/2 negros ()</th>
+                            <th>Tornillo CP 3/16 x 3/8 negros ()</th>
+                            <th>Tornillo CC 8-18 x 3/4 galv ()</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 12")</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 16")</th>
+                            <th>Link 12" inox. haideli (ferceva)</th>
+                            <th>Link 16" inox. haideli (ferceva)</th>
+                            <th>Manubrio olimpia proyectable</th>
+                            <th>Silicon transparente Itval</th>
+                            <th>Cinta masking 3/4 x 40 yardas (Abro)</th>
+                            <th>Materiales limpieza</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th id="vinil18">0</th>
+                            <th id="torcc18">0</th>
+                            <th id="taco18">0</th>
+                            <th id="torm18">0</th>
+                            <th id="torh18">0</th>
+                            <th id="tori18">0</th>
+                            <th id="torl1_18">0</th>
+                            <th id="torl2_18">0</th>
+                            <th id="link12_18">0</th>
+                            <th id="link16_18">0</th>
+                            <th id="mani18">0</th>
+                            <th id="sil18">0</th>
+                            <th id="cinta18">0</th>
+                            <th id="clean18">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- -->
+
+                <table class="tablaAlumino tablaV19_20">
+                    <thead>
+                        <tr>
+                            <th>Tipo Ventana</th>
+                            <th>Comp</th>
+                            <th>Nombre receta</th>
+                            <th>Cantidad (m)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablitaV19_20">
+                        <tr>
+                            <th>V-19 & V-20</th>
+                            <th>1385</th>
+                            <th>MARCO PROYECTABLE</th>
+                            <th id="marcop19_20">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-19 & V-20</th>
+                            <th>1384</th>
+                            <th>MARCO DE HOJA</th>
+                            <th id="hojap19_20">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-19 & V-20</th>
+                            <th>1382</th>
+                            <th>INTERMEDIO</th>
+                            <th id="interp19_20">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-19 & V-20</th>
+                            <th>1383</th>
+                            <th>JUNQUILLO</th>
+                            <th id="junqp19_20">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-19 & V-20</th>
+                            <th>1444</th>
+                            <th>ANCLA</th>
+                            <th id="anclap19_20">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <table class="tablaV19_20">
+                    <thead>
+                        <tr class="titAcc">
+                            <th colspan="14">ACCESORIOS PARA VENTANAS V-19 Y V-20</th>
+                        </tr>
+                        <tr>
+                            <th>Vinil P-92 (479-5mm perfilplast)</th>
+                            <th>Tornillo CC 8-18 x 1 1/2 galv</th>
+                            <th>Tacos plasticos f-5 (u)</th>
+                            <th>Tornillo CP 3/16 x 1/2 negros ()</th>
+                            <th>Tornillo CP 3/16 x 3/8 negros ()</th>
+                            <th>Tornillo CC 8-18 x 3/4 galv ()</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 12")</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 16")</th>
+                            <th>Link 12" inox. haideli (ferceva)</th>
+                            <th>Link 16" inox. haideli (ferceva)</th>
+                            <th>Manubrio olimpia proyectable</th>
+                            <th>Silicon transparente Itval</th>
+                            <th>Cinta masking 3/4 x 40 yardas (Abro)</th>
+                            <th>Materiales limpieza</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th id="vinil19_20">0</th>
+                            <th id="torcc19_20">0</th>
+                            <th id="taco19_20">0</th>
+                            <th id="torm19_20">0</th>
+                            <th id="torh19_20">0</th>
+                            <th id="tori19_20">0</th>
+                            <th id="torl1_19_20">0</th>
+                            <th id="torl2_19_20">0</th>
+                            <th id="link12_19_20">0</th>
+                            <th id="link16_19_20">0</th>
+                            <th id="mani19_20">0</th>
+                            <th id="sil19_20">0</th>
+                            <th id="cinta19_20">0</th>
+                            <th id="clean19_20">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- -->
+
+                <table class="tablaAlumino tablaV21_22">
+                    <thead>
+                        <tr>
+                            <th>Tipo Ventana</th>
+                            <th>Comp</th>
+                            <th>Nombre receta</th>
+                            <th>Cantidad (m)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablitaV21_22">
+                        <tr>
+                            <th>V-21 & V-22</th>
+                            <th>1385</th>
+                            <th>MARCO PROYECTABLE</th>
+                            <th id="marcop21_22">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-21 & V-22</th>
+                            <th>1384</th>
+                            <th>MARCO DE HOJA</th>
+                            <th id="hojap21_22">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-21 & V-22</th>
+                            <th>1382</th>
+                            <th>INTERMEDIO</th>
+                            <th id="interp21_22">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-21 & V-22</th>
+                            <th>1383</th>
+                            <th>JUNQUILLO</th>
+                            <th id="junqp21_22">0</th>
+                        </tr>
+                        <tr>
+                            <th>V-21 & V-22</th>
+                            <th>1444</th>
+                            <th>ANCLA</th>
+                            <th id="anclap21_22">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="tablaV21_22">
+                    <thead>
+                        <tr class="titAcc">
+                            <th colspan="14">ACCESORIOS PARA VENTANAS V-21 Y V-22</th>
+                        </tr>
+                        <tr>
+                            <th>Vinil P-92 (479-5mm perfilplast)</th>
+                            <th>Tornillo CC 8-18 x 1 1/2 galv</th>
+                            <th>Tacos plasticos f-5 (u)</th>
+                            <th>Tornillo CP 3/16 x 1/2 negros ()</th>
+                            <th>Tornillo CP 3/16 x 3/8 negros ()</th>
+                            <th>Tornillo CC 8-18 x 3/4 galv ()</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 12")</th>
+                            <th>Tornillo CP 8x 1/2 inox (Link de 16")</th>
+                            <th>Link 12" inox. haideli (ferceva)</th>
+                            <th>Link 16" inox. haideli (ferceva)</th>
+                            <th>Manubrio olimpia proyectable</th>
+                            <th>Silicon transparente Itval</th>
+                            <th>Cinta masking 3/4 x 40 yardas (Abro)</th>
+                            <th>Materiales limpieza</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th id="vinil21_22">0</th>
+                            <th id="torcc21_22">0</th>
+                            <th id="taco21_22">0</th>
+                            <th id="torm21_22">0</th>
+                            <th id="torh21_22">0</th>
+                            <th id="tori21_22">0</th>
+                            <th id="torl1_21_22">0</th>
+                            <th id="torl2_21_22">0</th>
+                            <th id="link12_21_22">0</th>
+                            <th id="link16_21_22">0</th>
+                            <th id="mani21_22">0</th>
+                            <th id="sil21_22">0</th>
+                            <th id="cinta21_22">0</th>
+                            <th id="clean21_22">0</th>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- -->
+            </div>
+    </section>
+        <script src="script/validate.js"></script>
+        <script src="script/export.js"></script>
+</body>
+</html>
